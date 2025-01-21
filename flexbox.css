@@ -1,0 +1,60 @@
+/* General Section Styles */
+.homie,
+.not,
+.mes {
+  display: flex;
+  justify-content: space-between;
+  /* Space between the text and number */
+  align-items: center;
+  /* Vertically center content */
+  margin: 10px 0;
+  /* Add spacing between sections */
+  padding: 5px 15px;
+  /* Add padding for better spacing */
+  border: 1px solid rgb(220, 220, 220);
+  /* Light border for structure */
+  border-radius: 10px;
+  /* Rounded corners */
+  background-color: rgb(245, 245, 245);
+  /* Light gray background */
+}
+
+/* Number Styles */
+.numbers,
+.numbe\.\rs,
+.number\.\s {
+  background-color: rgb(29, 155, 240);
+  /* Blue background for numbers */
+  color: white;
+  /* White text for contrast */
+  font-weight: bold;
+  /* Make the numbers bold */
+  padding: 5px 10px;
+  /* Add padding around numbers */
+  border-radius: 50%;
+  /* Circular design for the numbers */
+  text-align: center;
+  /* Center align text inside */
+  min-width: 30px;
+  /* Ensure consistent circle size */
+  height: 30px;
+  /* Keep the height consistent */
+  display: flex;
+  /* Flexbox for centering text */
+  justify-content: center;
+  /* Center text horizontally */
+  align-items: center;
+  /* Center text vertically */
+}
+
+/* Text Styling */
+.home {
+  font-size: 16px;
+  /* Slightly larger font for text */
+  font-weight: bold;
+  /* Bold for emphasis */
+  color: rgb(50, 50, 50);
+  /* Dark gray for the text */
+  margin: 0;
+  /* Remove default paragraph margins */
+}
