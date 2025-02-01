@@ -1,43 +1,59 @@
 body {
-  background-color: rgb(49, 49, 49);
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  min-height: 100vh; /* Allows scrolling if needed */
-  margin: 0;
-  padding: 0;
+  background-color: rgb(12, 12, 12);
 }
 
 .big-container {
   position: absolute;
   width: 100%;
+  top: 100px;
+  left: 450px;
 }
 
-.container {  
+.container {
   width: 300px;
   padding: 2em;
   background-color: #1c1f2b;
   text-align: center;
   border-radius: 10px;
   position: relative;
-  margin-top: 10em;
-  animation: border-animation 2s linear infinite alternate; /* Fix shorthand */
+  z-index: 10;
+  animation: 2s spin linear infinite;  
+  animation: 2s border-animation linear infinite;
 }
 
-.container::after{
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.container::after,
+.container::before {
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: red; 
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 3px;  
+  animation: 2s spin linear infinite;  
 }
 
-@keyframes border-animation {
+.container::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
   from {
-    transform: translateX(0);
+    --angle: 0deg;
   }
+
   to {
-    transform: translateX(300px); /* Adjust based on desired movement */
+    --angle: 360deg;
   }
 }
 
@@ -51,4 +67,15 @@ body {
   color: #ffffffbe;
   font-size: 1em;
   margin-bottom: 1em;
+}
+
+@keyframes border-animation {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(300px);
+    /* Adjust based on desired movement */
+  }
 }
